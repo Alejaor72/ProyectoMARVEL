@@ -1,30 +1,28 @@
 const username = document.getElementById("username");
 const mainContent = document.getElementById("container");
 
-//Logica del local storage
-let userList = [];
-let characterList = [];
+let ListaUsuarios = [];
+let ListaPersonajes = [];
 let favoriteList = [];
 let apiList = [];
 
-//Funciones de carga y guardado
-function loadUsers() {
+function UsuariosCargados() {
     let loadedUsers = localStorage.getItem("user");
     if (loadedUsers !== null) {
-        userList = JSON.parse(loadedUsers);
+        ListaUsuarios = JSON.parse(loadedUsers);
     };
-    console.log("load users:", userList);
+    console.log("load users:", ListaUsuarios);
 }
-loadUsers(); //primera carga de users
+UsuariosCargados(); 
 
 function loadCharacters() {
     let loadedCharacters = localStorage.getItem("character");
     if (loadedCharacters !== null) {
-        characterList = JSON.parse(loadedCharacters);
+        ListaPersonajes = JSON.parse(loadedCharacters);
     };
-    console.log("load characters:", characterList);
+    console.log("load characters:", ListaPersonajes);
 }
-//loadCharacters(); //primera carga de characters
+
 
 function loadFavorites() {
     let user = findLoggedUser();
@@ -34,15 +32,15 @@ function loadFavorites() {
     };
     console.log("load favorites:", favoriteList);
 }
-loadFavorites(); //primera carga de favorites
+loadFavorites(); 
 
-function saveUsers() {
-    let json = JSON.stringify(userList);
+function GuardarUsuario() {
+    let json = JSON.stringify(ListaUsuarios);
     localStorage.setItem("user", json);
 }
 
 function saveCharacters() {
-    let json = JSON.stringify(characterList);
+    let json = JSON.stringify(ListaPersonajes);
     localStorage.setItem("character", json);
 }
 
@@ -56,12 +54,11 @@ function saveFavorites() {
     localStorage.setItem("favorite", json);
 }
 
-//Funciones de logica HUD
 function findLoggedUser() {
     let loggedUser
-    for (let index = 0; index < userList.length; index++) {
-        if (userList[index].isLogged == true) {
-            loggedUser = userList[index];
+    for (let index = 0; index < ListaUsuarios.length; index++) {
+        if (ListaUsuarios[index].isLogged == true) {
+            loggedUser = ListaUsuarios[index];
             return loggedUser;
         }
     }
@@ -74,10 +71,10 @@ function updateHUD() {
 updateHUD();
 
 function logout() {
-    for (let index = 0; index < userList.length; index++) {
-        if (userList[index].isLogged == true) {
-            userList[index].isLogged = false;
-            saveUsers();
+    for (let index = 0; index < ListaUsuarios.length; index++) {
+        if (ListaUsuarios[index].isLogged == true) {
+            ListaUsuarios[index].isLogged = false;
+            GuardarUsuario();
             window.location.href = './index.html'
             favoriteList = [];
             saveFavorites();
@@ -100,14 +97,12 @@ const fetchData = async () => {
     const data = await fetch(url);
     const dataJson = await data.json();
     apiList = dataJson.results;
-    //console.log('fetch apiList', apiList);
     saveApi();
 }
 fetchData();
 
 
 function generateContent() {
-    //console.log('apiList', apiList);
 
     if (localStorage.getItem("character")) {
         console.log("characters loaded from memory")
@@ -126,9 +121,9 @@ function generateContent() {
                 let favorite = false;
                 let image = apiList[i].image;
                 let newCharacter = new Character(id, name, description, comics, stories, events, series, favorite, image);
-                characterList.push(newCharacter);
+                ListaPersonajes.push(newCharacter);
             }
-            console.log('characerList', characterList);
+            console.log('characerList', ListaPersonajes);
             saveCharacters();
             showCharacters();
         } else {
@@ -147,46 +142,46 @@ if (localStorage.getItem("character")) {
 //content generation trigger
 
 function showCharacters() {
-    for (let i = 0; i < characterList.length; i++) {
+    for (let i = 0; i < ListaPersonajes.length; i++) {
         let favFlag = false
         for (let j = 0; j < favoriteList.length; j++) {
-            if (characterList[i].id == favoriteList[j].id) {
+            if (ListaPersonajes[i].id == favoriteList[j].id) {
                 favFlag = true;
             }
         }
         let character = new Character(
-            characterList[i].id, characterList[i].name, characterList[i].description, characterList[i].comics, characterList[i].stories, characterList[i].events, characterList[i].series, favFlag, characterList[i].image
+            ListaPersonajes[i].id, ListaPersonajes[i].name, ListaPersonajes[i].description, ListaPersonajes[i].comics, ListaPersonajes[i].stories, ListaPersonajes[i].events, ListaPersonajes[i].series, favFlag, ListaPersonajes[i].image
         )
         if (favFlag == true) {
-            character.renderFav(mainContent);
+            character.renderFavoritos(mainContent);
         } else if (favFlag == false) {
-            character.renderNoFav(mainContent);
+            character.renderNoFavoritos(mainContent);
         }
     }
 }
 
 function findCharacter(id) {
-    for (let i = 0; i < characterList.length; i++) {
-        if (characterList[i].id == id) {
-            return characterList[i];
+    for (let i = 0; i < ListaPersonajes.length; i++) {
+        if (ListaPersonajes[i].id == id) {
+            return ListaPersonajes[i];
         }
     }
     console.log("character not found");
 }
 
 function addFavorite(id) {
-    for (let i = 0; i < characterList.length; i++) {
-        if (characterList[i].id == id) {
-            characterList[i].favorite = true;
-            favoriteList.push(characterList[i]);
+    for (let i = 0; i < ListaPersonajes.length; i++) {
+        if (ListaPersonajes[i].id == id) {
+            ListaPersonajes[i].favorite = true;
+            favoriteList.push(ListaPersonajes[i]);
             saveCharacters();
             saveFavorites();
         }
     }
-    for (let index = 0; index < userList.length; index++) {
-        if (userList[index].isLogged == true) {
-            userList[index].favoriteList = favoriteList;
-            saveUsers();
+    for (let index = 0; index < ListaUsuarios.length; index++) {
+        if (ListaUsuarios[index].isLogged == true) {
+            ListaUsuarios[index].favoriteList = favoriteList;
+            GuardarUsuario();
         }
     }
 }
@@ -198,16 +193,16 @@ function removeFavorite(id) {
             saveFavorites();
         }
     }
-    for (let i = 0; i < characterList.length; i++) {
-        if (characterList[i].id == id) {
-            characterList[i].favorite = false;
+    for (let i = 0; i < ListaPersonajes.length; i++) {
+        if (ListaPersonajes[i].id == id) {
+            ListaPersonajes[i].favorite = false;
             saveCharacters();
         }
     }
-    for (let index = 0; index < userList.length; index++) {
-        if (userList[index].isLogged == true) {
-            userList[index].favoriteList = favoriteList;
-            saveUsers();
+    for (let index = 0; index < ListaUsuarios.length; index++) {
+        if (ListaUsuarios[index].isLogged == true) {
+            ListaUsuarios[index].favoriteList = favoriteList;
+            GuardarUsuario();
         }
     }
 }
@@ -233,9 +228,9 @@ function searchCharacter(){
     let search = searchHTML.value;
     let searchList = [];
     if (search !== "") {
-        for (let i = 0; i < characterList.length; i++) {
-            if (characterList[i].name.toLowerCase().includes(search.toLowerCase())) {
-                searchList.push(characterList[i]);
+        for (let i = 0; i < ListaPersonajes.length; i++) {
+            if (ListaPersonajes[i].name.toLowerCase().includes(search.toLowerCase())) {
+                searchList.push(cListaPersonajes[i]);
             }
         }
     }

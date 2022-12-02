@@ -1,8 +1,8 @@
 class character{
-    constructor(id, name, image,description,comics,stories,events,series){
+    constructor(id, name, thumbnail,description,comics,stories,events,series){
         this.id = id;
         this.name = name;
-        this.image = thumbnail.path;
+        this.image = thumbnail;
         this.description = description;
         this.comics = comics;
         this.stories = stories;
@@ -11,7 +11,7 @@ class character{
         this.favorite = false;
     }
 
-    renderFav(container) {
+    renderFavoritos(container) {
         let card = document.createElement('div');
         card.classList.add('item');
 
@@ -52,7 +52,7 @@ class character{
         container.appendChild(card);
     }
 
-    renderNoFav(container){
+    renderNoFavoritos(container){
         let card = document.createElement('div');
         card.classList.add('item');
 

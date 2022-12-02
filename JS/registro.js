@@ -1,16 +1,16 @@
-let userList = [];
+let ListaUsuarios = [];
 
-function loadUsers() {
+function UsuariosCargados() {
     let loadedUsers = localStorage.getItem("user");
     if (loadedUsers !== null) {
-        userList = JSON.parse(loadedUsers);
+        ListaUsuarios = JSON.parse(loadedUsers);
     };
     
 }
-loadUsers(); 
+UsuariosCargados(); 
 
-function saveUsers() {
-    let json = JSON.stringify(userList);
+function GuardarUsuario() {
+    let json = JSON.stringify(ListaUsuarios);
     localStorage.setItem("user", json);
 }
 
@@ -19,8 +19,8 @@ function validateUsername(user) {
         alert("Your username cannot be left empty");
         return true;
     }
-    for (let index = 0; index < userList.length; index++) {
-        if (userList[index].name == user) {
+    for (let index = 0; index < ListaUsuarios.length; index++) {
+        if (ListaUsuarios[index].name == user) {
             alert("Este usuario ya existe");
             return true
         }
@@ -33,9 +33,9 @@ function validateEmail(email) {
         return true;
     }
     if (email.includes("@") && email.includes(".")) {
-        for (let index = 0; index < userList.length; index++) {
-            console.log(index, userList[index].email)
-            if (userList[index].email == email) {
+        for (let index = 0; index < ListaUsuarios.length; index++) {
+            console.log(index, ListaUsuarios[index].email)
+            if (ListaUsuarios[index].email == email) {
                 alert("Este correo ya ha sido utilizado")
                 return true
             }
@@ -66,8 +66,8 @@ function createNewUser(name, email, password, favoriteList) {
         isLogged: true,
         favoriteList: null
     }
-    userList.push(newUser);
-    saveUsers();
+    ListaUsuarios.push(newUser);
+    GuardarUsuario();
     console.log("new user", newUser.name, "saved")
 }
 
@@ -88,3 +88,4 @@ function signup() {
     }
 
 }
+

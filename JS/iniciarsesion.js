@@ -1,27 +1,27 @@
 
-let userList = [];
+let ListaUsuarios = [];
 
-function loadUsers() {
+function UsuariosCargados() {
     let loadedUsers = localStorage.getItem("user");
     if (loadedUsers !== null) {
-        userList = JSON.parse(loadedUsers);
+        ListaUsuarios = JSON.parse(loadedUsers);
     };
     
 }
-loadUsers();
+UsuariosCargados();
 
-function saveUsers() {
-    let json = JSON.stringify(userList);
+function GuardarUsuario() {
+    let json = JSON.stringify(ListaUsuarios);
     localStorage.setItem("user", json);
 }
 
 function validateEmail(email) {
     if (email == "") {
-        alert("The email cannot be left empty");
+        alert("ingrese un correo correcto");
         return true;
     }
-    for (let index = 0; index < userList.length; index++) {
-        if (userList[index].email == email) {
+    for (let index = 0; index < ListaUsuarios.length; index++) {
+        if (ListaUsuarios[index].email == email) {
             return false;
         }
     }
@@ -31,12 +31,12 @@ function validateEmail(email) {
 
 function validatePassword(password, email) {
     if (password == "") {
-        alert("The password cannot be left empty");
+        alert("ingrese una contraseña correcta");
         return true;
     }
-    for (let index = 0; index < userList.length; index++) {
-        if (userList[index].email == email) {
-            if (userList[index].password == password) {
+    for (let index = 0; index < ListaUsuarios.length; index++) {
+        if (ListaUsuarios[index].email == email) {
+            if (ListaUsuarios[index].password == password) {
                 return false;
             }
         }
@@ -47,12 +47,12 @@ function validatePassword(password, email) {
 }
 
 function updateUser(email){
-    for (let index = 0; index < userList.length; index++) {
-        if (userList[index].email == email) {
-            userList[index].isLogged = true;
+    for (let index = 0; index < ListaUsuarios.length; index++) {
+        if (ListaUsuarios[index].email == email) {
+            ListaUsuarios[index].isLogged = true;
         }
     }
-    saveUsers();
+    GuardarUsuario();
 }
 
 function login() {
