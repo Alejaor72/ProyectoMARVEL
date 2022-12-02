@@ -1,0 +1,255 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background: linear-gradient(180deg, #000000 0%, rgb(8, 7, 71) 53.18%, #05042b 100%);
+    
+}
+header{
+    background-color:transparent;
+    margin: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    flex-direction: row; 
+    
+}
+.logoinicio{
+    margin-left: 2%;
+}
+.barra{
+    
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    width:1000px;
+    margin: 13px;
+    font-family: Montserrat SemiBold;
+    font-size: 14px;
+    color: #FFFFFF;
+    
+
+}
+a{
+    
+    align-items: center;
+    align-content: center;
+}
+.boton1{
+    font-family: Montserrat SemiBold;
+    font-size: 15px;
+    color: #FFFFFF;
+    background-color: red;
+    padding: 10px;
+    border: none;
+    align-items: center;
+}
+.parte1{
+    background-image: url(Group\ 9.png);
+    height: 14%;
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    flex-direction: row;
+
+}
+.derecha{
+  margin: 0%;
+  margin-top: 100px;
+}
+.parte2{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    font-family: Montserrat SemiBold;
+    font-size: 22px;
+    color: #FFFFFF;
+}
+.parte2 button{
+    font-family: Montserrat SemiBold;
+    font-size: 17px;
+    width: 200px;
+    background-color: rgb(255, 0, 0)(134, 134, 134);
+    color: #000000;
+    padding: 10px;
+    border: none;
+    align-items: center;
+}
+#carrusel {
+    
+    float:left;
+    width:600px;
+    overflow:hidden;
+    height: 300px;
+    position:relative;
+    
+}
+ 
+#carrusel .left-arrow {
+    position:absolute;
+    left:10px;
+    z-index:1;
+    top:40%;
+    margin-top:-9px;
+}
+ 
+#carrusel .right-arrow {
+    position:absolute;
+    right:10px;
+    z-index:1;
+    top:40%;
+    margin-top:-9px;
+}
+ 
+.carrusel {
+    width:4000px;
+    left:0px;
+    position:absolute;
+    z-index:0;
+    top:15%;
+}
+ 
+.carrusel>div {
+    float: left;
+    height: 500px;
+    margin-right: 5px;
+    width: 195px;
+    text-align:center;
+}
+ 
+.carrusel img {
+    cursor:pointer;
+    border-radius: 50%;
+    
+}
+ 
+.product {
+    border:#cccccc00 1px solid;
+}
+
+.product:hover {
+    transform: translateY(-20px);
+    transition: all 0.2s;
+}
+
+.parte3{
+    height: 600px;
+    background-color: rgb(255, 0, 0);
+    display: flex;
+    margin-top: 2%;
+}
+.imagens{
+    height: 600px;
+    background-image: url(https://media.revistagq.com/photos/5e79ddce5bcabb0008f4dbab/1:1/w_1199,h_1199,c_limit/Civil%20War%20.jpg);
+    background-size: cover;
+    width: 50%;
+}
+.sobrenosotros{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+    
+}
+.sobrenosotros h2{
+    font-family: Montserrat;
+    font-size: 55px;
+    color: white;
+}
+.sobrenosotros p{
+    font-family: Montserrat;
+    text-align: justify;
+    margin: 1%;
+    font-size: 30px;
+    width: 500px;
+    color: rgb(255, 255, 255);
+
+}
+.parte4{
+    margin-top: 4%;
+    display: flex;
+    margin-left: 1%;
+    justify-content: space-between;
+
+}
+.parte4 img{
+    margin-left: 1%;
+    
+}
+.contactanos{
+    margin-right: 3%;
+    margin-left: 2%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    width: 700px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15%;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Montserrat SemiBold;
+}
+footer{
+    background-color: red;
+    margin-top: 3%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    color: white;
+}
+
+form{
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    height: 350px;
+}
+.contactanos button{
+    font-family: Montserrat SemiBold;
+    font-size: 17px;
+    width: 200px;
+    background-color: darkgrey;
+    color: #000000;
+    padding: 10px;
+    border: none;
+    align-items: center;
+    margin-bottom: 3%;
+}
+.contactanos h2{
+    font-size: 40px;
+    margin-top: 2%;
+}
+input{
+    padding-left: 160px;
+    padding-right: 160px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-radius: 15px;
+    border-color: rgb(123, 123, 123);
+    font-family: Montserrat;
+    text-align: left;
+    font-size: 15px;
+}
+#mensaje{
+    padding-bottom: 150px;
+}

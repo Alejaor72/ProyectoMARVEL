@@ -1,0 +1,113 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+body{
+    background-image: url(Group\ 11.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120vh;
+}
+header{
+    margin: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    flex-direction: row; 
+    
+}
+.logoinicio{
+    margin-left: 2%;
+}
+.barra{
+    
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    width:1000px;
+    margin: 13px;
+    font-family: Montserrat SemiBold;
+    font-size: 16px;
+    color: #FFFFFF;
+    
+
+}
+a{
+    
+    align-items: center;
+    align-content: center;
+}
+.iniciarsesion{
+    margin: auto;
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Montserrat SemiBold;
+    padding: 2%;
+}
+form{
+    margin: 3%;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 240px;
+}
+.iniciarsesion button{
+    font-family: Montserrat SemiBold;
+    font-size: 15px;
+    width: 150px;
+    background-color: rgb(255, 0, 0);
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    align-items: center;
+    margin-bottom: 2%;
+}
+.iniciarsesion h2{
+    font-size: 30px;
+    margin-top: 2%;
+}
+.iniciarsesion p{
+    font-size: 13x;
+    color: rgba(0, 0, 0, 0.712);
+    margin-top: 4%;
+}
+input{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-radius: 15px;
+    border-color: rgb(123, 123, 123);
+     background-color: #c8c8c8;
+    font-family: Montserrat;
+    text-align: left;
+    font-size: 15px;
+}
+#registro{
+    font-family: Montserrat SemiBold;
+    margin-top: 2%;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    font-size: 15px;
+    width: 270px;
+    background-color: rgb(16, 0, 141);
+    color: #ffffff;
+    padding: 6px;
+    border: none;
+    align-items: center;
+    
+}

@@ -1,0 +1,220 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: rgb(255, 255, 255);
+    
+}
+header{
+    background-color:transparent;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    flex-direction: row; 
+    background: linear-gradient(180deg, #000000 0%, rgb(8, 7, 71) 53.18%, #05042b 100%);
+}
+.logoinicio{
+    margin-left: 2%;
+}
+.barra{
+    
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    width:1000px;
+    margin: 13px;
+    font-family: Montserrat SemiBold;
+    font-size: 14px;
+    color: #FFFFFF;
+    
+
+}
+a{
+    
+    align-items: center;
+    align-content: center;
+}
+.boton1{
+    font-family: Montserrat SemiBold;
+    font-size: 15px;
+    color: #FFFFFF;
+    background-color: red;
+    padding: 10px;
+    border: none;
+    align-items: center;
+}
+input{
+    margin: 3%;
+    width: 300px;
+    padding: 8px;
+    font-family: Montserrat SemiBold;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2%;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.superheroe{
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 270px;
+    height: 330px;
+    margin: 1%;
+    border-radius: 10%;
+    font-family: Montserrat SemiBold;
+    font-size: 10px;
+    color: white;
+    flex-direction: column;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.281)
+}
+.contenedor{
+    width: 270px;
+    height: 200px;
+    border-radius: 10% 10% 0% 0%;
+}
+.contenedor img{
+    border-radius: 10% 10% 0% 0%;
+    width: 100%;
+}
+.superheroe:hover {
+    transform: translateY(-10px);
+    transition: all 0.2s;
+}
+.superheroe h2{
+    margin-bottom: 10%;
+}
+#star{
+    position: absolute;
+    width: 80px;
+    margin-left: 210px;
+    margin-top: 10px;
+}
+.ventana{
+    width: 1200px;
+    background-color: #dfdede;
+    height: 700px;
+    position: absolute;
+    font-family:  Montserrat;
+    top: 19%;
+    left: 30px;
+    display:none;
+    justify-content: space-between;
+    align-content: center;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.648);
+}
+.imagen1{
+   background-image: url(https://lumiere-a.akamaihd.net/v1/images/thor_amor_y_trueno_3cc74888.jpeg?region=420,0,1080,1080);
+   background-size: cover;
+   background-repeat: no-repeat;
+   width: 50%;
+   
+}
+.texto{
+    width: 50%;
+    overflow-y: scroll;
+    margin: 2%;
+}
+.texto::-webkit-scrollbar{
+    display: none;
+}
+.texto h1{
+   color: rgb(156, 0, 0);
+}
+.texto img{
+    position: absolute;
+    width: 20px;
+    right: 5%;
+    top: 4%;
+}
+.datos{
+    margin: 2%;
+}
+.datos h3{
+    margin-top: 3%;
+    color: rgb(9, 0, 53);
+}
+.imagen2{
+    background-image: url(https://media.revistagq.com/photos/5ca5f6c633e7519c80153499/2:3/w_1600,h_2400,c_limit/blackpanther_671.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+    
+}
+.imagen3{
+    background-image: url(https://i.pinimg.com/originals/c1/7e/c5/c17ec5fd438281ab9505f04c56ad9d2d.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+}
+.imagen4{
+    background-image: url(https://i.pinimg.com/736x/be/53/18/be5318244b45bf2c4e8aac3297b58e40.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+}
+.imagen5{
+    background-image: url(https://media.glamour.mx/photos/6190627ca6e030d6480f728c/1:1/w_1575,h_1575,c_limit/245039.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+}
+.imagen6{
+    background-image: url(https://i.pinimg.com/564x/9e/11/67/9e1167ef77c42cedbff9676e4fa18d15.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+}
+.imagen7{
+    background-image: url(https://pbs.twimg.com/media/FHL7CAIWYAEIUPG.jpg:large);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+}
+.imagen8{
+    background-image: url(https://pbs.twimg.com/media/FYDiMleX0AA1c4d.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+}
+.unliked{
+    font-family: Montserrat SemiBold;
+    font-size: 15px;
+    width: 150px;
+    background-color: rgb(16, 0, 0);
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    align-items: center;
+    margin-bottom: 8%;
+    right: -100px;
+}
+
+.liked{
+    font-family: Montserrat SemiBold;
+    font-size: 15px;
+    width: 150px;
+    background-color: rgb(36, 2, 138);
+    color: #ff0000;
+    padding: 10px;
+    border: none;
+    margin-bottom: 8%;
+    align-items: center;
+}
+.unliked:hover {
+    transform: translateY(10px);
+    transition: all 0.2s;
+}
+.liked:hover {
+    transform: translateY(10px);
+    transition: all 0.2s;
+}
